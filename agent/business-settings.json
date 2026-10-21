@@ -1,0 +1,17 @@
+{
+  "_comment": "Edit these to match the real business. They fill the [PLACEHOLDERS] in every outreach draft. Keep in sync with the dashboard's Settings page.",
+  "companyName": "[CLEANING COMPANY NAME]",
+  "serviceArea": "Atlanta and approved surrounding metro",
+  "phone": "[BUSINESS PHONE]",
+  "email": "[BUSINESS EMAIL]",
+  "bookingLink": "[BOOKING LINK]",
+  "primaryOffer": "Reliable Airbnb/STR turnover cleaning — photo-verified guest-ready checks, fresh linens, and restock reports",
+  "senderName": "[YOUR NAME]",
+  "dailyGoal": 20,
+  "followupDays": [3, 5, 7],
+  "maxAttempts": 4,
+  "artifactUrl": "https://claude.ai/code/artifact/ff713ecd-8272-418d-86f3-8f780250e0f9",
+  "approvedCities": "Atlanta, Decatur, Marietta, Smyrna, Sandy Springs, Brookhaven, Dunwoody, Chamblee, Doraville, Tucker, East Point, College Park, Hapeville, Avondale Estates, Scottdale, Stone Mountain, Vinings, Mableton, Roswell, Alpharetta, Kennesaw, Norcross, Duluth, Forest Park, Union City, Kirkwood, Grant Park, Midtown, Buckhead, Old Fourth Ward, West Midtown, Cascade Heights, Sweet Auburn",
+  "zipLow": 30002,
+  "zipHigh": 30364
+}

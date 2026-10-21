@@ -1,0 +1,8 @@
+# Daily-run working files — regenerated each run, never committed
+agent/run/
+
+# Local test server log
+/tmp/strserve.log
+
+node_modules/
+.DS_Store
