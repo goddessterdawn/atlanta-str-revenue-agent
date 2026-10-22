@@ -97,9 +97,25 @@ A JSON array; each element (observed fields only):
 - Read `agent/run/out/report.json` and write a short dated run log to
   `agent/runs/<date>.md` (researched / accepted / 8+ / rejected + reasons /
   duplicates prevented / Gmail drafts created / DB write result / anything needing
-  a human). Commit it:
-  `git add agent/runs && git commit -m "Daily run <date>" && git push` (only the
-  run log — never commit `agent/run/` working files; they are gitignored).
+  a human). Commit it (BEST-EFFORT — never fail the run over git):
+  `git add agent/runs && git commit -m "Daily run <date>" && git push || true`
+  (only the run log — `agent/run/` working files are gitignored). If `git push`
+  is refused (e.g. the Claude GitHub App is not installed on the repo), that is
+  fine — the report in `agent/run/out/report.json` and the dashboard are the
+  real record; just note it and finish successfully.
+
+## Environment requirements (read if a run produces 0 leads)
+This agent needs TWO grants on the routine's cloud environment, both set by a
+human (not changeable from inside a run):
+1. **Outbound web access** — verification requires fetching each company's own
+   website. If WebFetch/curl to external hosts returns 403 / DNS errors, the
+   environment's Network access is too restrictive: open the routine's
+   environment settings and raise Network access to allow general outbound web
+   (domain-allowlisting will not work — the agent visits arbitrary sites it
+   discovers). WebSearch and the dashboard (Artifact) work without this; website
+   verification does not. Without it, correctly add 0 leads and say so.
+2. **Claude GitHub App** (optional) — only needed to push the run log back to the
+   repo. Core function (dashboard writes, Gmail drafts) does not depend on it.
 
 ## Notes
 - `owner` on agent-created leads is `Daily Agent`; stage is `Awaiting Approval`
